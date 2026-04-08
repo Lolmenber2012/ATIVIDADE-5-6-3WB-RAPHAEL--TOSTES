@@ -1,30 +1,32 @@
 import sys
 from pygame import *
 
-pygame.init()
-screen = pygame.display.set_mode((1280, 720))
+init()
+screen = display.set_mode((1280, 720))
 running = True
 
-fonte = pygame.font.Font("GODOFWAR", 50)
-image = pygame.image.load("Kratos.png")
-image = pygame.transform.scale(image, (200, 200))
-pygame.mixer.music.load("Homens queimem a vila.mp3")
-pygame.mixer.music.play(-1)
+fonte = font.Font("GODOFWAR.ttf", 50)
+image = image.load("Kratos.png")
+image = transform.scale(image, (200, 200))
+mixer.music.load("Homens queimem a vila.mp3")
+mixer.music.play(-1)
 #BP
 while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
+    for ev in event.get():
+        if ev.type == QUIT:
+            quit()
+            sys.exit()
 
     screen.fill("#97D1FA")
-    pygame.draw.rect(screen, "#0D1664", (100, 200, 200, 50))
-    pygame.draw.circle(screen, "#FFF251", (80, 80), 50)
-    pygame.draw.polygon(screen, "#F2883B", [(400, 300), (450, 300), (425, 250)])
-    pygame.draw.line(screen, "#FFF251", (10, 150), (100, 20), 4)
+    draw.rect(screen, (0, 255, 0), (0, 680, 1280, 50))
+    draw.rect(screen, (150, 75, 0), (630, 500, 600, 200))
+    draw.circle(screen, "#FFF251", (80, 80), 50)
+    draw.polygon(screen, "#F2883B", [(400, 300), (450, 300), (425, 250)])
+    draw.line(screen, "#FFF251", (10, 150), (100, 20), 4)
 
     screen.blit(image, (500, 300))
 
-    steve_text = fonte.render("I am BATMAN!", True, "#000000")
+    steve_text = fonte.render("HOMENS, QUEIMEM A VILA!", True, "#000000")
     screen.blit(steve_text, (500, 250))
 
-    pygame.display.update()
+    display.update()
