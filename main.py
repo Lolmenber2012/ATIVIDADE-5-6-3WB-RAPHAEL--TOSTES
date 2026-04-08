@@ -5,10 +5,10 @@ pygame.init()
 screen = pygame.display.set_mode((1280, 720))
 running = True
 
-fonte = pygame.font.Font("batmfa__.ttf", 50)
-image = pygame.image.load("batman.png")
+fonte = pygame.font.Font("GODOFWAR", 50)
+image = pygame.image.load("Kratos.png")
 image = pygame.transform.scale(image, (200, 200))
-pygame.mixer.music.load("batman_1966.mp3")
+pygame.mixer.music.load("Homens queimem a vila.mp3")
 pygame.mixer.music.play(-1)
 #BP
 while running:
